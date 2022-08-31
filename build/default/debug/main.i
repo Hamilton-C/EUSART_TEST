@@ -21448,27 +21448,26 @@ unsigned char __t3rd16on(void);
 
 
 
-unsigned char serial_data;
-
 
 
 
 
 void configEUSART();
-void configOSCI();
+
+
 
 
 void main(void) {
 
-    configOSCI();
+
     configEUSART();
 
+    LATBbits.LATB0 = 0;
+
+
     while(1){
-
-
-
-
         TX2REG = "U";
+        _delay((unsigned long)((100)*(8000000/4000.0)));
         while(PIR3bits.TX2IF == 0);
 
     }
@@ -21482,7 +21481,7 @@ void configEUSART(){
 
     SP2BRGH = 0;
     SP2BRGL = 34;
-    SP2BRG = 34;
+
     TX2STAbits.BRGH = 1;
     BAUD2CONbits.BRG16 = 1;
 
@@ -21495,9 +21494,9 @@ void configEUSART(){
     TX2STAbits.SYNC = 0;
 
 
-    TRISDbits.TRISD1 = 1;
-    ANSELDbits.ANSELD1 = 0;
-    RX2PPS = 0b00010111;
+
+
+
 
 
     TX2STAbits.TXEN = 1;

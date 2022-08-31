@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/Test_EUSART.X.production.hex">
+  <executable name="dist/default/debug/Test_EUSART.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-      <used>150</used>
-      <free>32618</free>
+      <used>116</used>
+      <free>32652</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2304</length>
-      <used>1</used>
-      <free>2303</free>
+      <used>2</used>
+      <free>2302</free>
     </memory>
   </executable>
 </project>

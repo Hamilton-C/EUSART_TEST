@@ -1,15 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"20 main.c
-[; ;main.c: 20: void configOSCI();
-[v _configOSCI `(v ~T0 @X0 0 e? ]
-"19
-[; ;main.c: 19: void configEUSART();
+"17 main.c
+[; ;main.c: 17: void configEUSART();
 [v _configEUSART `(v ~T0 @X0 0 e? ]
-"11482 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h
+"27604 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 27604:     struct {
+[s S1201 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1201 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"27603
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 27603: typedef union {
+[u S1200 `S1201 1 ]
+[n S1200 . . ]
+"27615
+[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 27615: extern volatile LATBbits_t LATBbits __attribute__((address(0xF83)));
+[v _LATBbits `VS1200 ~T0 @X0 0 e@3971 ]
+"11482
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 11482: extern volatile unsigned char TX2REG __attribute__((address(0xE95)));
 [v _TX2REG `Vuc ~T0 @X0 0 e@3733 ]
-"15762
+[v F181 `(v ~T0 @X0 1 tf1`ul ]
+"12 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/builtins.h
+[v __delay `JF181 ~T0 @X0 0 e ]
+[p i __delay ]
+"15762 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 15762:     struct {
 [s S682 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S682 . SSPIF BCLIF SSP2IF BCL2IF TXIF RCIF TX2IF RC2IF ]
@@ -30,9 +42,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11527
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 11527: extern volatile unsigned char SP2BRGL __attribute__((address(0xE96)));
 [v _SP2BRGL `Vuc ~T0 @X0 0 e@3734 ]
-"11520
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 11520: extern volatile unsigned short SP2BRG __attribute__((address(0xE96)));
-[v _SP2BRG `Vus ~T0 @X0 0 e@3734 ]
 "11736
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 11736:     struct {
 [s S460 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -80,31 +89,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18514
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 18514: extern volatile unsigned char RC6PPS __attribute__((address(0xEF8)));
 [v _RC6PPS `Vuc ~T0 @X0 0 e@3832 ]
-"28193
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 28193:     struct {
-[s S1221 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1221 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"28192
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 28192: typedef union {
-[u S1220 `S1221 1 ]
-[n S1220 . . ]
-"28204
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 28204: extern volatile TRISDbits_t TRISDbits __attribute__((address(0xF8A)));
-[v _TRISDbits `VS1220 ~T0 @X0 0 e@3978 ]
-"20828
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 20828:     struct {
-[s S889 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S889 . ANSELD0 ANSELD1 ANSELD2 ANSELD3 ANSELD4 ANSELD5 ANSELD6 ANSELD7 ]
-"20827
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 20827: typedef union {
-[u S888 `S889 1 ]
-[n S888 . . ]
-"20839
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 20839: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0xF21)));
-[v _ANSELDbits `VS888 ~T0 @X0 0 e@3873 ]
-"9891
-[; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 9891: extern volatile unsigned char RX2PPS __attribute__((address(0xE88)));
-[v _RX2PPS `Vuc ~T0 @X0 0 e@3720 ]
 "11614
 [; ;/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/proc/pic18f45q10.h: 11614:     struct {
 [s S456 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1915,124 +1899,112 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "90
 [p x EBTRB = OFF ]
-"13 main.c
-[; ;main.c: 13: unsigned char serial_data;
-[v _serial_data `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"23
-[; ;main.c: 23: void main(void) {
+"22 main.c
+[; ;main.c: 22: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "25
-[; ;main.c: 25:     configOSCI();
-[e ( _configOSCI ..  ]
-"26
-[; ;main.c: 26:     configEUSART();
+[; ;main.c: 25:     configEUSART();
 [e ( _configEUSART ..  ]
-"28
-[; ;main.c: 28:     while(1){
+"27
+[; ;main.c: 27:     LATBbits.LATB0 = 0;
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+"30
+[; ;main.c: 30:     while(1){
 [e :U 1738 ]
 {
-"33
-[; ;main.c: 33:         TX2REG = "U";
+"31
+[; ;main.c: 31:         TX2REG = "U";
 [e = _TX2REG -> :s 1C `uc ]
-"34
-[; ;main.c: 34:         while(PIR3bits.TX2IF == 0);
+"32
+[; ;main.c: 32:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"33
+[; ;main.c: 33:         while(PIR3bits.TX2IF == 0);
 [e $U 1740  ]
 [e :U 1741 ]
 [e :U 1740 ]
 [e $ == -> . . _PIR3bits 0 6 `i -> 0 `i 1741  ]
 [e :U 1742 ]
-"36
-[; ;main.c: 36:     }
+"35
+[; ;main.c: 35:     }
 }
 [e :U 1737 ]
 [e $U 1738  ]
 [e :U 1739 ]
-"38
-[; ;main.c: 38:     return;
+"37
+[; ;main.c: 37:     return;
 [e $UE 1736  ]
-"39
-[; ;main.c: 39: }
+"38
+[; ;main.c: 38: }
 [e :UE 1736 ]
 }
-"42
-[; ;main.c: 42: void configEUSART(){
+"41
+[; ;main.c: 41: void configEUSART(){
 [v _configEUSART `(v ~T0 @X0 1 ef ]
 {
 [e :U _configEUSART ]
 [f ]
-"45
-[; ;main.c: 45:     SP2BRGH = 0;
+"44
+[; ;main.c: 44:     SP2BRGH = 0;
 [e = _SP2BRGH -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     SP2BRGL = 34;
+"45
+[; ;main.c: 45:     SP2BRGL = 34;
 [e = _SP2BRGL -> -> 34 `i `uc ]
 "47
-[; ;main.c: 47:     SP2BRG = 34;
-[e = _SP2BRG -> -> 34 `i `us ]
-"48
-[; ;main.c: 48:     TX2STAbits.BRGH = 1;
+[; ;main.c: 47:     TX2STAbits.BRGH = 1;
 [e = . . _TX2STAbits 0 2 -> -> 1 `i `uc ]
-"49
-[; ;main.c: 49:     BAUD2CONbits.BRG16 = 1;
+"48
+[; ;main.c: 48:     BAUD2CONbits.BRG16 = 1;
 [e = . . _BAUD2CONbits 0 3 -> -> 1 `i `uc ]
-"52
-[; ;main.c: 52:     TRISCbits.TRISC6 = 0;
+"51
+[; ;main.c: 51:     TRISCbits.TRISC6 = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:     ANSELCbits.ANSELC6 = 0;
+"52
+[; ;main.c: 52:     ANSELCbits.ANSELC6 = 0;
 [e = . . _ANSELCbits 0 6 -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:     RC6PPS = 0x0B;
+"53
+[; ;main.c: 53:     RC6PPS = 0x0B;
 [e = _RC6PPS -> -> 11 `i `uc ]
-"57
-[; ;main.c: 57:     TX2STAbits.SYNC = 0;
+"56
+[; ;main.c: 56:     TX2STAbits.SYNC = 0;
 [e = . . _TX2STAbits 0 4 -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     TRISDbits.TRISD1 = 1;
-[e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:     ANSELDbits.ANSELD1 = 0;
-[e = . . _ANSELDbits 0 1 -> -> 0 `i `uc ]
-"62
-[; ;main.c: 62:     RX2PPS = 0b00010111;
-[e = _RX2PPS -> -> 23 `i `uc ]
-"65
-[; ;main.c: 65:     TX2STAbits.TXEN = 1;
+"64
+[; ;main.c: 64:     TX2STAbits.TXEN = 1;
 [e = . . _TX2STAbits 0 5 -> -> 1 `i `uc ]
-"66
-[; ;main.c: 66:     RC2STAbits.SPEN = 1;
+"65
+[; ;main.c: 65:     RC2STAbits.SPEN = 1;
 [e = . . _RC2STAbits 0 7 -> -> 1 `i `uc ]
-"68
-[; ;main.c: 68:     }
+"67
+[; ;main.c: 67:     }
 [e :UE 1743 ]
 }
-"71
-[; ;main.c: 71: void configOSCI(){
+"70
+[; ;main.c: 70: void configOSCI(){
 [v _configOSCI `(v ~T0 @X0 1 ef ]
 {
 [e :U _configOSCI ]
 [f ]
-"73
-[; ;main.c: 73:     OSCFRQbits.HFFRQ = 0b0011;
+"72
+[; ;main.c: 72:     OSCFRQbits.HFFRQ = 0b0011;
 [e = . . _OSCFRQbits 0 0 -> -> 3 `i `uc ]
-"74
-[; ;main.c: 74:     OSCCON1bits.NOSC = 0b110;
+"73
+[; ;main.c: 73:     OSCCON1bits.NOSC = 0b110;
 [e = . . _OSCCON1bits 0 1 -> -> 6 `i `uc ]
-"75
-[; ;main.c: 75:     OSCCON2bits.COSC = 0b110;
+"74
+[; ;main.c: 74:     OSCCON2bits.COSC = 0b110;
 [e = . . _OSCCON2bits 0 1 -> -> 6 `i `uc ]
-"76
-[; ;main.c: 76:     OSCCON1bits.NDIV = 0b0000;
+"75
+[; ;main.c: 75:     OSCCON1bits.NDIV = 0b0000;
 [e = . . _OSCCON1bits 0 0 -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:     OSCCON2bits.CDIV = 0b0000;
+"76
+[; ;main.c: 76:     OSCCON2bits.CDIV = 0b0000;
 [e = . . _OSCCON2bits 0 0 -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80: }
+"79
+[; ;main.c: 79: }
 [e :UE 1744 ]
 }
 [a 1C 85 0 ]
