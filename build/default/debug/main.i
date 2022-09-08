@@ -21386,10 +21386,149 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "/opt/microchip/mplabx/v5.45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8/pic/include/xc.h" 2 3
 # 9 "main.c" 2
+# 1 "/opt/microchip/xc8/v2.20/pic/include/c99/stdio.h" 1 3
+# 24 "/opt/microchip/xc8/v2.20/pic/include/c99/stdio.h" 3
+# 1 "/opt/microchip/xc8/v2.20/pic/include/c99/bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "/opt/microchip/xc8/v2.20/pic/include/c99/bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "/opt/microchip/xc8/v2.20/pic/include/c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "/opt/microchip/xc8/v2.20/pic/include/c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "/opt/microchip/xc8/v2.20/pic/include/c99/stdio.h" 2 3
+# 52 "/opt/microchip/xc8/v2.20/pic/include/c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 10 "main.c" 2
 # 1 "./configs_bit.h" 1
 # 35 "./configs_bit.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = EXTOSC
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINTOSC_64MHZ
 
 
 #pragma config CLKOUTEN = OFF
@@ -21444,31 +21583,37 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config EBTRB = OFF
-# 10 "main.c" 2
+# 11 "main.c" 2
 
 
 
 
 
 
+
+unsigned char serial_data;
 
 void configEUSART();
-
-
+void configOSCI();
 
 
 void main(void) {
 
-
+    configOSCI();
     configEUSART();
 
-    LATBbits.LATB0 = 0;
 
 
     while(1){
-        TX2REG = "U";
-        _delay((unsigned long)((100)*(8000000/4000.0)));
-        while(PIR3bits.TX2IF == 0);
+# 46 "main.c"
+        TX1REG = "U";
+        while(PIR3bits.TX1IF == 0);
+
+
+
+        _delay((unsigned long)((50)*(16000000/4000.0)));
+
+
 
     }
 
@@ -21476,42 +21621,45 @@ void main(void) {
 }
 
 
+
 void configEUSART(){
 
 
-    SP2BRGH = 0;
-    SP2BRGL = 34;
-
-    TX2STAbits.BRGH = 1;
-    BAUD2CONbits.BRG16 = 1;
+    BAUD1CONbits.BRG16 = 0;
+    TX1STAbits.BRGH = 1;
+    TX1STAbits.SYNC = 0;
+    SP1BRG = ((16000000/16)/9600)-1;
+    SP1BRGH = 0;
+    SP1BRGL = SP1BRG;
 
 
     TRISCbits.TRISC6 = 0;
     ANSELCbits.ANSELC6 = 0;
-    RC6PPS = 0x0B;
+    RC6PPS = 0x09;
 
 
-    TX2STAbits.SYNC = 0;
+    TRISCbits.TRISC7 = 1;
+    ANSELCbits.ANSELC7 = 0;
+    RX1PPS = 0x17;
 
 
+    RC1STAbits.SPEN = 1;
+    TX1STAbits.TXEN = 1;
 
-
-
-
-
-    TX2STAbits.TXEN = 1;
-    RC2STAbits.SPEN = 1;
 
     }
 
 
 void configOSCI(){
 
-    OSCFRQbits.HFFRQ = 0b0011;
+
+    OSCFRQbits.HFFRQ = 0b0101;
     OSCCON1bits.NOSC = 0b110;
     OSCCON2bits.COSC = 0b110;
     OSCCON1bits.NDIV = 0b0000;
     OSCCON2bits.CDIV = 0b0000;
+
+
 
 
 }
